@@ -1,0 +1,17 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+       
+         String s=""; 
+      for(int i= 0 ; i < digits.length ; i++){
+          s = s +digits[i];
+      }
+      String k = Integer.toString(Integer.parseInt(s)+1);
+      char [] ch = k.toCharArray();
+       int [] arr = new int[ch.length];
+    //   int temp = k ;
+    for(int i = 0 ; i < ch.length ; i++){
+          arr[i] = Character.getNumericValue(ch[i]);
+      }
+      return arr;
+    }
+}
