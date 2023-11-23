@@ -1,11 +1,5 @@
-       
-
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
-import java.util.*;
-class HelloWorld {
-    public static void main(String[] args) {
-       String[] strs = {"dog","racecar","car"};
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
         String s = strs[0];
         String temp = "" , val = "";
         char[] ch = s.toCharArray();
@@ -13,12 +7,16 @@ class HelloWorld {
         for(int i = 0 ; i < ch.length ; i++){
             temp = temp + ch[i];
             for(int j = 1 ; j < strs.length ; j++){
-                if(i <= j){
+                if(i <= strs[j].length()-1){
                 if(!(temp.equalsIgnoreCase(strs[j].substring(0,i+1)))){
                     flag = true ;
                     break;
                 }
                 
+            }
+            else {
+                flag = true;
+                break;
             }
             
             }
@@ -27,8 +25,8 @@ class HelloWorld {
             }
             
         }
-        System.out.println(val);
+        return val;
 
-// System.out.println(val);
+        
     }
 }
