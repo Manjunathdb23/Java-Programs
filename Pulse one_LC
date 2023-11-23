@@ -1,17 +1,23 @@
-class Solution {
-    public int[] plusOne(int[] digits) {
-       
-         String s=""; 
-      for(int i= 0 ; i < digits.length ; i++){
-          s = s +digits[i];
+      
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+       int [] digits = {9,9,9,9,9,9,9};
+       digits[digits.length-1]++;
+       for(int i = digits.length-1 ; i > 0 && digits[i] == 10 ; i--){
+           digits[i] = 0;
+           digits[i-1]= digits[i-1]+1;
+       }
+       if(digits[0] == 10){
+           int[] result  = new int[digits.length+1];
+           result[0] = 1;
+           digits = result;
+       }
+      for(int i = 0 ; i < digits.length ; i++){
+          System.out.println(digits[i]);
       }
-      String k = Integer.toString(Integer.parseInt(s)+1);
-      char [] ch = k.toCharArray();
-       int [] arr = new int[ch.length];
-    //   int temp = k ;
-    for(int i = 0 ; i < ch.length ; i++){
-          arr[i] = Character.getNumericValue(ch[i]);
-      }
-      return arr;
     }
 }
