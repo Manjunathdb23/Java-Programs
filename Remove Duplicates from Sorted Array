@@ -1,0 +1,20 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        Set<Integer> s = new HashSet<Integer>();
+        for(int ele : nums){
+            s.add(ele);
+        }
+        List<Integer> ls = new ArrayList<Integer>();
+        int count = 0; 
+        for(int n : s){
+           ls.add(n);
+        }
+        Collections.sort(ls);
+        for(int l : ls){
+            nums[count]=l;
+            count++;
+        }
+        return s.size();
+        
+    }
+}
