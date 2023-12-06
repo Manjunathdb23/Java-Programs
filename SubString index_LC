@@ -1,0 +1,12 @@
+ public int strStr(String haystack, String needle) {
+        int index;
+        char [] ch = needle.toCharArray();
+        if(haystack.contains(needle)){
+            index = haystack.indexOf(needle);
+            return index;
+
+        }
+        else {
+            return -1;
+        }
+    }
